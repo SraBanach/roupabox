@@ -44,7 +44,10 @@ namespace roupabox
 
                         break;
 
-                case 3 : Console.WriteLine();
+                case 3 :
+                    produtos varPro = new produtos();
+                    varPro.cadProduto();
+                    Console.WriteLine();
 
                         break;
 
