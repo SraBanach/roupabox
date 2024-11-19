@@ -9,7 +9,7 @@ using System.Web;
 
 namespace roupabox
 {
-    internal class clientes
+    internal class Clientes
     {
 
         public void cadCliente()
@@ -83,8 +83,8 @@ namespace roupabox
             Cabecalho varcabecalho = new Cabecalho();
             varcabecalho.cabecalho();
 
-            Menu varmenu = new Menu();
-            varmenu.menu();
+            ExibirMenu varmenu = new ExibirMenu();
+            varmenu.Menu();
 
 
 

@@ -13,8 +13,12 @@ namespace roupabox
             Cabecalho varcabecalho = new Cabecalho();
             varcabecalho.cabecalho();
 
-            Menu varmenu = new Menu();
-            varmenu.menu();
+            Produtos varPro = new Produtos(); // parte que precisa adicionar quando vou precisar listar produtos; 
+            Clientes varCli = new Clientes(); // parte que precisa adicionar quando vou listar produtos; 
+
+
+            ExibirMenu varmenu = new ExibirMenu();
+            varmenu.Menu(varPro); // add varPro para que ele pegue a referencia de produto; 
 
 
 

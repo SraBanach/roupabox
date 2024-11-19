@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace roupabox
 {
-    internal class Menu
+    internal class ExibirMenu
     {
-
-        public void menu()
+        public void Menu(Produtos varPro) // adc para listar = para levar as informacoes do menu para dentro do program (parametro)
         {
+
+            List<ProdutoCad> listaP = new List<ProdutoCad>();
+            //puxa o nome do internal class  ProdutosCad 
+            // Produtos vem do program o new Program 
 
             Console.WriteLine("Digite 0 para sair ");
             Console.WriteLine("Digite 1 para cadastro de clientes");
@@ -34,8 +37,7 @@ namespace roupabox
                     break;
 
                 case 1 : 
-                    clientes varCli = new clientes();
-                    varCli.cadCliente();
+                    //varCli.cadCliente();
                     Console.WriteLine();
 
                         break;
@@ -45,7 +47,6 @@ namespace roupabox
                         break;
 
                 case 3 :
-                    produtos varPro = new produtos();
                     varPro.cadProduto();
                     Console.WriteLine();
 
@@ -58,14 +59,7 @@ namespace roupabox
                     Console.WriteLine("Digite uma opção válida!");
                     Thread.Sleep(1000);
                     Console.Clear();
-
-                    Cabecalho varcabecalho = new Cabecalho();
-                    varcabecalho.cabecalho();
-
-                    Menu varmenu = new Menu();
-                    varmenu.menu();
-
-                    break;
+                     break;
 
             }
 
