@@ -14,8 +14,6 @@ namespace roupabox
         public ProdutoCad cadProduto()
         {
 
-
-
             Console.Clear();
             Console.WriteLine("Cadastro de produtos");
 
@@ -41,21 +39,25 @@ namespace roupabox
             Produto.catPro = catPro; //Linha para associar o produto ao catPro;
 
             Console.WriteLine("\n valor:");
-            while (!double.TryParse(Console.ReadLine(), out double valPro)) //verificar se o valor esta com numeros mesmo; 
-            {
-                Produto.valPro = valPro;
+
+            double valPro;
+            while (!double.TryParse(Console.ReadLine(), out valPro)) //verificar se o valor esta com numeros mesmo; 
+            {              
                 Console.WriteLine("Valor inválido. Tente novamente.");
-             
             }
-            
+            Console.WriteLine("\n Produto cadastrado com sucesso!");
+
 
             Console.WriteLine("\n Peso:");
-            while (!double.TryParse(Console.ReadLine(), out double pesoPro)) // verificar se esta em peso mesmo; 
+
+            double pesoPro;
+            while (!double.TryParse(Console.ReadLine(), out pesoPro)) // verificar se está em peso mesmo
             {
-                Produto.pesoPro = pesoPro;
                 Console.WriteLine("Peso inválido. Tente novamente.");
-             
             }
+
+            // Atribuir o valor fora do loop, após a conversão bem-sucedida
+            Produto.pesoPro = pesoPro;
 
             listaProdutos.Add(Produto);
 
@@ -63,11 +65,7 @@ namespace roupabox
 
 
             //foreach = faca enquanto
-            foreach (var produto in listaProdutos) 
-            { 
-                Console.WriteLine($"Descrição: {produto.descPro}, " + $"Valor: {produto.valPro}"); 
-            }    
-
+            
 
             Console.WriteLine("\n Digite qualquer tecla para voltar o menu principal.");
             Console.ReadKey(); // tela estatica ate receber a resposta. 
@@ -82,7 +80,25 @@ namespace roupabox
 
             return Produto;
 
+        }
 
+        public void listarProdutos()
+        {
+            Console.Clear();
+            Console.WriteLine("Lista de produtos Cadastrados");
+            foreach (var produto in listaProdutos)
+            {
+                Console.WriteLine($"Descrição: {produto.descPro}, " + $"Valor: {produto.valPro}" + $"Peso: {produto.pesoPro}");
+            }
+            Console.WriteLine("\n Digite uma tecla para voltar ao menu principal");
+            Console.ReadKey();
+            Console.Clear();
+
+            Cabecalho variavelCabecalho = new Cabecalho();
+            variavelCabecalho.cabecalho();
+
+            Produtos varPro = new Produtos();
+            ExibirMenu variavelMenu = new ExibirMenu();
 
         }
 

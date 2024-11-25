@@ -9,13 +9,14 @@ namespace roupabox
 {
     internal class ExibirMenu
     {
-        public void Menu(Produtos varPro) // adc para listar = para levar as informacoes do menu para dentro do program (parametro)
+        public void Menu(Produtos varPro, Clientes varCli) // adc para listar = para levar as informacoes do menu para dentro do program (parametro)
         {
 
             List<ProdutoCad> listaP = new List<ProdutoCad>();
+            List<ClienteCad> listaC = new List<ClienteCad>();
             //puxa o nome do internal class  ProdutosCad 
             // Produtos vem do program o new Program 
-
+            while (true) { 
             Console.WriteLine("Digite 0 para sair ");
             Console.WriteLine("Digite 1 para cadastro de clientes");
             Console.WriteLine("Digite 2 para listar clientes");
@@ -37,23 +38,19 @@ namespace roupabox
                     break;
 
                 case 1 : 
-                    //varCli.cadCliente();
-                    Console.WriteLine();
-
+                    varCli.cadCliente();
                         break;
 
-                case 2 : Console.WriteLine();
-
+                case 2 :
+                        varCli.listarCliente();
                         break;
 
                 case 3 :
                     varPro.cadProduto();
-                    Console.WriteLine();
-
                         break;
 
-                case 4 : Console.WriteLine();
-
+                case 4 :
+                        varPro.listarProdutos();
                         break;
                 default:
                     Console.WriteLine("Digite uma opção válida!");
@@ -61,6 +58,7 @@ namespace roupabox
                     Console.Clear();
                      break;
 
+            }
             }
 
 

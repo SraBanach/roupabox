@@ -8,7 +8,7 @@ namespace roupabox
 {
     internal class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             Cabecalho varcabecalho = new Cabecalho();
             varcabecalho.cabecalho();
@@ -18,7 +18,7 @@ namespace roupabox
 
 
             ExibirMenu varmenu = new ExibirMenu();
-            varmenu.Menu(varPro); // add varPro para que ele pegue a referencia de produto; 
+            varmenu.Menu(varPro, varCli); // add varPro para que ele pegue a referencia de produto; 
 
 
 
